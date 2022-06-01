@@ -1,6 +1,6 @@
 import { loadStripe } from "@stripe/stripe-js";
 
-export async function checkout({ lineItems }) {
+async function checkout({ lineItems }) {
   let stripePromise = null;
 
   const getStripe = () => {
@@ -20,3 +20,4 @@ export async function checkout({ lineItems }) {
     cancelUrl: window.location.origin,
   });
 }
+export { checkout };
