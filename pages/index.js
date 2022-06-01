@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { checkout } from "./lib/stripe/checkout";
+import { checkout } from "../lib/stripe/checkout";
 
 export default function Home() {
   return (
