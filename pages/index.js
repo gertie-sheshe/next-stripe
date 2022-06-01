@@ -17,7 +17,12 @@ export default function Home() {
 
         <div className={styles.grid}>
           <div className={styles.card}>
-            <Image src="/images/teeone.png" width={400} height={400} />
+            <Image
+              alt="vintage tshirt"
+              src="/images/teeone.png"
+              width={400}
+              height={400}
+            />
             <p>Very expensive tshirt 1</p>
             <button
               onClick={() =>
@@ -32,7 +37,12 @@ export default function Home() {
             </button>
           </div>
           <div className={styles.card}>
-            <Image src="/images/teetwo.png" width={400} height={400} />
+            <Image
+              alt="old cassetes tshirt"
+              src="/images/teetwo.png"
+              width={400}
+              height={400}
+            />
             <p>Very expensive tshirt 2</p>
             <button
               onClick={() =>
