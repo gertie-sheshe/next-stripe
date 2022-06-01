@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import { checkout } from "./lib/stripe/checkout";
 
 export default function Home() {
   return (
@@ -12,17 +13,39 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Buy Physical NFTs</h1>
+        <h1 className={styles.title}>Buy My Physical NFTs</h1>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
+          <div className={styles.card}>
             <Image src="/images/teeone.png" width={400} height={400} />
             <p>Very expensive tshirt 1</p>
-          </a>
-          <a href="https://nextjs.org/docs" className={styles.card}>
+            <button
+              onClick={() =>
+                checkout({
+                  lineItems: [
+                    { price: "price_1L5jIfIA9blC304XwmlJyVLJ", quantity: 1 },
+                  ],
+                })
+              }
+            >
+              BUY!
+            </button>
+          </div>
+          <div className={styles.card}>
             <Image src="/images/teetwo.png" width={400} height={400} />
             <p>Very expensive tshirt 2</p>
-          </a>
+            <button
+              onClick={() =>
+                checkout({
+                  lineItems: [
+                    { price: "price_1L5jI8IA9blC304Xr9IB7MD0", quantity: 1 },
+                  ],
+                })
+              }
+            >
+              BUY!
+            </button>
+          </div>
         </div>
       </main>
     </div>
